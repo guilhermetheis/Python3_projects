@@ -4,6 +4,8 @@ import socket, argparse
 
 parser = argparse.ArgumentParser()
 
+# Allows inputs from bash
+
 parser.add_argument ('-ip', required =True) # IP Address
 parser.add_argument ('-port', type=int, required =True) # Port number
 args = parser.parse_args() 
