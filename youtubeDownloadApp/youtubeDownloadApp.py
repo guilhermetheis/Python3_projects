@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+"""
+Usage: to use this program you need to run a 
+./youtubeDownloadApp.py -url enter.url.com -path "path" -mp3 True
+for a mp3 generation, for an mp4 the -mp3 should be false
+"""
+
 # For pytube installation pip3 install pytube
 
 # Argparse allows to add the url from command line
@@ -25,23 +31,29 @@ args = parser.parse_args()
 
 yt = YouTube(args.url)
 
-#print(yt.title) # Verifying if correctly connected with argparse
+#print(yt.title) # Verifying if correctly recognizes the video with argparse
 
 # Chosing the quality of the video (first always higher quality)
 
-stream = yt.streams.filter(only_audio=args.mp3).first()
+if(args.mp3 == True) :
+	stream = yt.streams.filter(only_audio=args.mp3).last() # Taking the worst quality to faster download
+
+else:
+	stream = yt.streams.first() # Taking the best quality for good video
+	
 
 #print(stream) # Veryfing stream
 
 # Print to know which video you're downloading
 
 print('Downloading ' + yt.title + " from YouTube url: " + args.url)
-
 # Downloading the video (best quality)
 
 stream.download(args.path)
 print('File name :'+stream.default_filename) # Verifying if filename works
 
-# Changing extension to mp3
-p = Path('videos/'+stream.default_filename)
-p.rename(p.with_suffix('.mp3'))
+if(args.mp3 == True): # changing extension to MP3 if audio
+
+	# Changing extension to mp3
+	p = Path('videos/'+stream.default_filename)
+	p.rename(p.with_suffix('.mp3'))
