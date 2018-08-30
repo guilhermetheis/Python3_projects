@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 
 """
+Author: Guilherme Theis
+
+License: MIT
+
+Email: guilhermetheis15@gmail.com
+
+Github: https://github.com/guilhermetheis
+
 Usage: to use this program you need to run a 
 ./youtubeDownloadApp.py -url enter.url.com -path "path" -mp3 True
 for a mp3 generation, for an mp4 the -mp3 should be false
@@ -35,25 +43,32 @@ yt = YouTube(args.url)
 
 # Chosing the quality of the video (first always higher quality)
 
-if(args.mp3 == True) :
-	stream = yt.streams.filter(only_audio=args.mp3).last() # Taking the worst quality to faster download
+if args.mp3 == False:
+		stream = yt.streams.first() # Taking the best quality for good video
+
 
 else:
-	stream = yt.streams.first() # Taking the best quality for good video
+	print('got here2')
+	stream = yt.streams.filter(only_audio=args.mp3).last() # Taking the worst quality to faster download
 	
 
 #print(stream) # Veryfing stream
 
 # Print to know which video you're downloading
 
-print('Downloading ' + yt.title + " from YouTube url: " + args.url)
+print('Downloading ' + stream.default_filename + " from YouTube url: " + args.url)
 # Downloading the video (best quality)
 
 stream.download(args.path)
-print('File name :'+stream.default_filename) # Verifying if filename works
+#print('File name :'+stream.default_filename) # Verifying if filename works
 
-if(args.mp3 == True): # changing extension to MP3 if audio
+if args.mp3 == False: # displaying were it was saved
 
-	# Changing extension to mp3
+	print('File ' + p.name() + ' sucefully downloaded into the ' + args.path)
+	
+else: # Changing extension to mp3 if audio
+
 	p = Path('videos/'+stream.default_filename)
 	p.rename(p.with_suffix('.mp3'))
+	os.remove('videos/'+stream.default_filename) #removing old file after conversion
+	print('File ' + p.name() + ' sucefully downloaded into the ' + args.path)
