@@ -41,21 +41,34 @@ lineValues = list(range(2,countRow+2))
 
 #print(lineValues) #Testing
 
-f.insert(0,'LINE #', lineValues)
-f.insert(9,'NEEDED QTY','')
-f.insert(10,'SUPPLIER','')
-f.insert(11,'SUPPLIER PN','')
-f.insert(12,'STOCK','')
-f.insert(13,'MOQ','')
-f.insert(14,'PRICE/UNIT','')
-f.insert(15,'TOTAL PRICE','')
-f.insert(16,'MANUFACTURER','')
-f.insert(17,'PN','')
-f.insert(18,'SUPPLIER','')
-f.insert(19,'SUPPLIER PN','')
-f.insert(20,'STOCK','')
-f.insert(21,'MOQ','')
-f.insert(22,'PRICE/UNIT','')
-f.insert(23,'TOTAL PRICE','')
+# Creating the list for equations
+
+equation1 = list()
+equation2 = list()
+
+# Creating the string that represents the equation to be inserted with insert()
+
+for x in range (0, countRow): 
+	equation1.append('=O'+str(lineValues[x])+'*J'+str(lineValues[x]))
+	equation2.append('=W'+str(lineValues[x])+'*J'+str(lineValues[x]))
+
+# Adding columns with equations or blank cells 
+
+f.insert(0,'LINE #', lineValues, True)
+f.insert(9,'NEEDED QTY','', True)
+f.insert(10,'SUPPLIER','', True)
+f.insert(11,'SUPPLIER PN','', True)
+f.insert(12,'STOCK','', True)
+f.insert(13,'MOQ','', True)
+f.insert(14,'PRICE/UNIT','', True)
+f.insert(15,'TOTAL PRICE',equation1, True)
+f.insert(16,'MANUFACTURER','', True)
+f.insert(17,'PN','', True)
+f.insert(18,'SUPPLIER','', True)
+f.insert(19,'SUPPLIER PN','', True)
+f.insert(20,'STOCK','', True)
+f.insert(21,'MOQ','', True)
+f.insert(22,'PRICE/UNIT','', True)
+f.insert(23,'TOTAL PRICE',equation2, True)
 
 f.to_csv(args.file, index=False) # Saving file (ovewrite)
