@@ -32,4 +32,6 @@ newVarList2 = [row[0].split(",")[1] for row in varList]
 #print(newVarList1) #veryfing output of loop
 #print(newVarList2) #veryfing output of loop
 
+plotable
+
 
