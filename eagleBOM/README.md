@@ -32,6 +32,11 @@ Now the only thing you need to do is choose the right settings for the ULP and r
 
 ![](figs/selectingModes.png)
 
+## Dependencies
+
+`sudo apt install python3`
+`pip3 intall pandas argparse`
+
 ## Usage of the script
 
 The script can be now used by simply running the following command in the terminal:
