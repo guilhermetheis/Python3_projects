@@ -1,6 +1,0 @@
-"Qty";"Value";"Device";"Package";"Parts";"Description";"MANUFACTURER";"PN";
-"1";"";"PINHD-1X2";"1X02";"JP1";"PIN HEADER";"";"";
-"1";"100nF";"C0805_.5MM_KEEPOUT";"C0805";"C5";"0805 Capacitor with a 0.5mm keepout";"AVX";"7779988";
-"2";"10uF";"C0805_.5MM_KEEPOUT";"C0805";"C1, C3";"0805 Capacitor with a 0.5mm keepout";"AVX";"8888888";
-"1";"1uF";"C0805_.5MM_KEEPOUT";"C0805";"C2";"0805 Capacitor with a 0.5mm keepout";"AVX";"7777777";
-"1";"1uF";"C0805_.5MM_KEEPOUT";"C0805";"C4";"0805 Capacitor with a 0.5mm keepout";"Vishay";"7878sa8";

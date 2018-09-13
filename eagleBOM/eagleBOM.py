@@ -31,7 +31,7 @@ args = parser.parse_args()
 
 # opening the file under the variable f
 
-f = pd.read_csv(args.file,sep=';', usecols=['Qty', 'Value', 'Device', 'Package', 'Parts', 'Description', 'MANUFACTURER', 'PN'])
+f = pd.read_csv(args.file,sep=';')
 
 #print(f) #testing
 

@@ -1,4 +1,4 @@
-# Ealge BOM fixer
+# Ealge BOM generator
 
 This script allows to fully automate the BOM creation using the native BOM generator from Eagle CAD. This script is based on the components used having those fields in the library:
 
