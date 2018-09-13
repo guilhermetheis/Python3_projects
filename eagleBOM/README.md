@@ -35,6 +35,7 @@ Now the only thing you need to do is choose the right settings for the ULP and r
 ## Dependencies
 
 `sudo apt install python3`
+
 `pip3 intall pandas argparse`
 
 ## Usage of the script
