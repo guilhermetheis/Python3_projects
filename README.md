@@ -2,13 +2,28 @@
 
 This is my python3 applications repository, each folder should contain a different application with a own README explaining its operation.
 
-## Working Projects
+## Repository structure
+
+.
++-- figs
++-- Ongoing Projects
+|   +-- NBAStats
+|   +-- youtubeDownloadApp
++-- utils
++-- Working Projects
+|   +--eagleBOM
+|   |   +-- figs
+|   |   +-- samples
+|   |   +-- src
+        |   +-- eagleBOM.py
+        +-- README.md
+### Working Projects
 
 Those are the projects that I've already made and validated. Issues should be opened if there is some bug. 
 
 * **eagleBOM**: this script allows the automatization of an eagle created BOM file.
 
-## Ongoing Projects
+### Ongoing Projects
 
 Those are the projects I am working right now
 
@@ -16,5 +31,5 @@ Those are the projects I am working right now
 
 This is a wide range of ideas I have found while looking to how to learn how to code, feel free to suggest anything if you want in the issues section.
 
-![](images/programming_challenges_v4.png)
+![](figs/programming_challenges_v4.png)
 
