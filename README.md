@@ -1,14 +1,20 @@
-# Python3_projects
+# Python Projects
 
-This is my python3 applications repository, each folder should contain a different application with a own README containing instructions/information about the project itself
+This is my python3 applications repository, each folder should contain a different application with a own README explaining its operation.
 
-## Projects
+## Working Projects
 
-* eagleBOM: this script allows the automatization of an eagle created BOM file. The fully explanation to how to set up eagle and run the program is explained in the README from the project folder.
+Those are the projects that I've already made and validated. Issues should be opened if there is some bug. 
+
+* **eagleBOM**: this script allows the automatization of an eagle created BOM file.
+
+## Ongoing Projects
+
+Those are the projects I am working right now
 
 ## Projects ideas
 
-This is a wide range of ideas I have found while looking to how to learn how to code
+This is a wide range of ideas I have found while looking to how to learn how to code, feel free to suggest anything if you want in the issues section.
 
 ![](images/programming_challenges_v4.png)
 
