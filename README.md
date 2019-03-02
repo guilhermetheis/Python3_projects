@@ -50,6 +50,12 @@ Those are the projects that I've already made and validated. Issues should be op
 
 Those are the projects I am working right now
 
+* **NBAStats**: program that scrap the results from the previous day game and show me directly the final result and the highest stat player of each team. Furthermore this should be able to scrap old games and create the season average for each player and I should be able to see it.
+
+* **youtubeDownloadApp**: simple program to download youtube videos. Furthermore this should allow the final format and quality of the downloaded files with a GUI.
+
+* **RFCalculator**: Calculator for RF to automate the design. Furthermore this should have a GUI.
+
 ## Projects ideas
 
 This is a wide range of ideas I have found while looking to how to learn how to code, feel free to suggest anything if you want in the issues section.
