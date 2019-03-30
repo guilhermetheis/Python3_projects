@@ -39,15 +39,15 @@ class GameWindow:
     player = 0
 
     def __init__(self): #init of the clas
-        pygame.init
+        pygame.init()
         self._running = True #private
         self._display_surf = None
         self._image_surf = None
         self.player = Player()
 
     def on_init(self):
-        pygame.init
-        self_display_surf = pygame.display.set_mode((self.windowWidth, self.windowHeight)) # creating display
+        pygame.init()
+        self._display_surf = pygame.display.set_mode((self.windowWidth, self.windowHeight)) # creating display
         pygame.display.set_caption('PySnake '+stringVersion)
         self._running = True
         self._image_surf = pygame.image.load("pygame.png").convert()
