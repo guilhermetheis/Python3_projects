@@ -13,6 +13,12 @@ This is my python3 applications repository, each folder should contain a differe
 │   │   ├── NBAStats.py
 │   │   ├── README.md
 │   │   └── scrapper.py
+│   ├── pySnake
+│   │   ├── pygame.png
+│   │   ├── pySnake.py
+│   │   └── README.md
+│   ├── RFCalculator
+│   │   └── RFCalculator.py
 │   └── youtubeDownloadApp
 │       └── youtubeDownloadApp.py
 ├── README.md

@@ -1,13 +1,17 @@
 '''
 This is a python based snake game to learn how to use pygame and for some fun during my trips by bus (student life in Europe rules man)
 Based on: https://pythonspot.com/snake-with-pygame/
-Date: 29/03/2019
-Version: 0.0.1
-Author: Guilherme Theis
-License: MIT
 '''
+__date__ = "29/03/2019"
+__author__ = "Guilherme Theis"
+__copyright__ = "Copyright 2019, GTheis"
+__credits__ = []
+__license__ = "MIT"
+__version__ = "0.0.1"
+__maintainer__ = "Guilherme Theis"
+__email__ = "Guilherme Theis"
+__status__ = "Development"
 
-stringVersion = "v0.0.1"
 
 # Imports
 import os
