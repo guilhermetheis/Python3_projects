@@ -62,7 +62,7 @@ class GameWindow:
     def on_render(self):
         self._display_surf.fill((0, 0, 0))
         self._display_surf.blit(self._image_surf, (self.player.x, self.player.y), pygame.HWSURFACE)
-        pygame.display.flip
+        pygame.display.flip()
 
     def on_cleanup(self):
         pygame.quit()
@@ -71,20 +71,20 @@ class GameWindow:
         if self.on_init() == False:
             self._running = False
  
-        while( self._running ):
+        while(self._running):
             pygame.event.pump()
             keys = pygame.key.get_pressed() 
  
-            if (keys[pygame.K_RIGHT]):
+            if (keys[K_RIGHT]):
                 self.player.moveRight()
  
-            if (keys[pygame.K_LEFT]):
+            if (keys[K_LEFT]):
                 self.player.moveLeft()
  
-            if (keys[pygame.K_UP]):
+            if (keys[K_UP]):
                 self.player.moveUp()
  
-            if (keys[pygame.K_DOWN]):
+            if (keys[K_DOWN]):
                 self.player.moveDown()
  
             if (keys[K_ESCAPE]):
@@ -94,7 +94,7 @@ class GameWindow:
         self.on_render()
         self.on_cleanup()
  
-if __name__ == "__main__" :
+if __name__ == "__main__":
     theWindow = GameWindow()
     theWindow.on_execute()
     
