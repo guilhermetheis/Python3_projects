@@ -10,8 +10,9 @@ At the first glance this project will be run in linux terminal. Further on I wan
 
 ## Current features
 
-None
+* dBm -> W/mW
+* W/mW -> dBm
 
 ## Future features/Under development
 
---* dBm -> W/mW converter
+* better format of the conversion
