@@ -16,3 +16,5 @@ At the first glance this project will be run in linux terminal. Further on I wan
 ## Future features/Under development
 
 * better format of the conversion
+
+> v0.0.1

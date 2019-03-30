@@ -17,7 +17,7 @@ import numpy as np
 
 class Calculator:
     
-    def __init__(): #constructor
+    #def __init__(): #constructor
 
     def mW2dBm(mWVal):
         return 10*np.log10(mWVal) #converts mW to dBm
@@ -29,6 +29,7 @@ class Calculator:
         return 10**(dBmVal/10) #converts dBm to W
 
 def main():
+    #Main function mostly for tests as of right now
 
 if __name__ == "__main__":
     main()
