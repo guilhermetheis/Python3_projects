@@ -14,6 +14,7 @@ __status__ = "Development"
 
 
 # Imports
+import sys
 import os
 from pygame.locals import *
 import pygame
@@ -30,9 +31,9 @@ class Player: #creating the player
     def moveLeft(self):
         self.x = self.x - self.speed
     def moveUp(self):
-        self.x = self.x + self.speed
+        self.y = self.y - self.speed
     def moveDown(self):
-        self.x = self.y - self.speed
+        self.y = self.y + self.speed
 
 class GameWindow:
 
@@ -50,7 +51,7 @@ class GameWindow:
         pygame.init()
         self._display_surf = pygame.display.set_mode((self.windowWidth,self.windowHeight), pygame.HWSURFACE)
  
-        pygame.display.set_caption('Pygame pythonspot.com example')
+        pygame.display.set_caption('pySnake '+ __version__)
         self._running = True
         self._image_surf = pygame.image.load("pygame.png").convert()
  
@@ -66,13 +67,15 @@ class GameWindow:
         self._display_surf.blit(self._image_surf,(self.player.x,self.player.y))
         pygame.display.flip()
  
-    def on_cleanup(self):
-        pygame.quit()
+    #def on_cleanup(self):
+     #   pygame.quit()
+      #  sys.exit()
  
     def on_execute(self):
+
         if self.on_init() == False:
             self._running = False
- 
+
         while(self._running):
             pygame.event.pump()
             keys = pygame.key.get_pressed() 
@@ -94,9 +97,11 @@ class GameWindow:
  
             self.on_loop()
             self.on_render()
-            self.on_cleanup()
+            #self.on_cleanup()
 
-if __name__ == "__main__":
+def main():
     theWindow = GameWindow()
     theWindow.on_execute()
-    
+
+if __name__ == "__main__":
+    main()
