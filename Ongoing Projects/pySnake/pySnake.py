@@ -19,7 +19,28 @@ import os
 from pygame.locals import *
 import pygame
 import time
+import random
 
+# Colors!
+
+white = (255, 255, 255)
+black = (0, 0, 0)
+green = (0, 255, 0)
+red = (255, 0, 0)
+
+class Apple:
+    def __init__(self, snakeXPos, snakeYPos):
+        try:
+            self.ypos = random.randrange(0, 590, 10)
+        except self.ypos != snakeYPos:
+            pass
+        try:
+            self.xpos = random.randrange(0, 790, 10)
+        except self.ypos != snakeXPos:
+            pass
+        
+    def draw(self, surface): #draw.rect method needs a surface that is created in the GameWindow later on.
+        pygame.draw.rect(surface, red, (self.xpos, self.ypos, 10, 10))
 class Snake: # creating the snake (array of x by y pixels)
 
     def __init__(self): #constructor
@@ -37,7 +58,7 @@ class Snake: # creating the snake (array of x by y pixels)
         self.ypos = self.ypos + self.distance
 
     def draw(self, surface): #draw.rect method needs a surface that is created in the GameWindow later on.
-        pygame.draw.rect(surface, (0, 255, 0), (self.xpos, self.ypos, 10, 10))
+        pygame.draw.rect(surface, green, (self.xpos, self.ypos, 10, 10))
         
 
 
@@ -54,6 +75,7 @@ class GameWindow:
         self._display_surf = None
         self._image_surf = None
         self.snake = Snake()
+        self.apple = Apple(self.snake.xpos,self.snake.ypos)
  
     def on_init(self):
         pygame.init()
@@ -72,6 +94,7 @@ class GameWindow:
     def on_render(self):
         self._display_surf.fill((0,0,0)) #Color of the board
         self.snake.draw(self._display_surf)
+        self.apple.draw(self._display_surf)
         pygame.display.flip() #update the display of the screen
  
     def on_cleanup(self):
