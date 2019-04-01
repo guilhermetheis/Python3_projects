@@ -7,7 +7,7 @@ __author__ = "Guilherme Theis"
 __copyright__ = "Copyright 2019, GTheis"
 __credits__ = []
 __license__ = "MIT"
-__version__ = "0.0.1"
+__version__ = "1.0.0"
 __maintainer__ = "Guilherme Theis"
 __email__ = "Guilherme Theis"
 __status__ = "Development"
@@ -18,34 +18,17 @@ import sys
 import os
 from pygame.locals import *
 import pygame
-
-class Player: #creating the player
-    x = 10 # initial X position
-    y = 10 # initial Y position
-    speed = 1 # speed
-
-    # Methods
-    #easy to understand directions
-    def moveRight(self):
-        self.x = self.x + self.speed
-    def moveLeft(self):
-        self.x = self.x - self.speed
-    def moveUp(self):
-        self.y = self.y - self.speed
-    def moveDown(self):
-        self.y = self.y + self.speed
+import time
 
 class GameWindow:
 
     windowWidth = 800
     windowHeight = 600
-    player = 0
  
-    def __init__(self):
+    def __init__(self): #Constructor
         self._running = True
         self._display_surf = None
         self._image_surf = None
-        self.player = Player() 
  
     def on_init(self):
         pygame.init()
@@ -53,7 +36,6 @@ class GameWindow:
  
         pygame.display.set_caption('pySnake '+ __version__)
         self._running = True
-        self._image_surf = pygame.image.load("pygame.png").convert()
  
     def on_event(self, event):
         if event.type == QUIT:
@@ -64,12 +46,11 @@ class GameWindow:
  
     def on_render(self):
         self._display_surf.fill((0,0,0))
-        self._display_surf.blit(self._image_surf,(self.player.x,self.player.y))
         pygame.display.flip()
  
-    #def on_cleanup(self):
-     #   pygame.quit()
-      #  sys.exit()
+    def on_cleanup(self):
+        pygame.quit()
+        sys.exit()
  
     def on_execute(self):
 
@@ -80,24 +61,13 @@ class GameWindow:
             pygame.event.pump()
             keys = pygame.key.get_pressed() 
  
-            if (keys[K_RIGHT]):
-                self.player.moveRight()
- 
-            if (keys[K_LEFT]):
-                self.player.moveLeft()
- 
-            if (keys[K_UP]):
-                self.player.moveUp()
- 
-            if (keys[K_DOWN]):
-                self.player.moveDown()
- 
             if (keys[K_ESCAPE]):
                 self._running = False
  
             self.on_loop()
             self.on_render()
-            #self.on_cleanup()
+            time.sleep (50.0 / 1000.0);
+        self.on_cleanup()
 
 def main():
     theWindow = GameWindow()

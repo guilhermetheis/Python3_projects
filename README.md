@@ -14,10 +14,10 @@ This is my python3 applications repository, each folder should contain a differe
 │   │   ├── README.md
 │   │   └── scrapper.py
 │   ├── pySnake
-│   │   ├── pygame.png
 │   │   ├── pySnake.py
 │   │   └── README.md
 │   ├── RFCalculator
+│   │   ├── README.md
 │   │   └── RFCalculator.py
 │   └── youtubeDownloadApp
 │       └── youtubeDownloadApp.py
