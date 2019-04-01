@@ -21,18 +21,23 @@ import pygame
 import time
 
 class Snake: # creating the snake (array of x by y pixels)
-    x = []
-    y = []
-    distance = 10 #How many pixels the snakes move per period (each apple will be 10x10 so I have 80x60 squares)
-    size = 1
-    display = 10
+
     def __init__(self): #constructor
-        for i in range(0, self.size*self.distance):
-            self.x[i] = self.x.append(0)
-            self.y[i] = self.y.append(0)
-    
+        self.ypos = 300 #Initial Y pos
+        self.xpos = 400 #Initial X pos
+        self.distance = 10 #How many pixels the snakes move per period (each apple will be 10x10 so I have 80x60 squares)
+
+    def moveRight(self):
+        self.xpos = self.xpos + self.distance
+    def moveLeft(self):
+        self.xpos = self.xpos - self.distance
+    def moveUp(self):
+        self.ypos = self.ypos - self.distance
+    def moveDown(self):
+        self.ypos = self.ypos + self.distance
+
     def draw(self, surface): #draw.rect method needs a surface that is created in the GameWindow later on.
-        pygame.draw.rect(surface, (0, 255, 0), (400, 300, 10, 10))
+        pygame.draw.rect(surface, (0, 255, 0), (self.xpos, self.ypos, 10, 10))
         
 
 
@@ -78,9 +83,22 @@ class GameWindow:
         if self.on_init() == False:
             self._running = False
 
+        
         while(self._running):
             pygame.event.pump()
             keys = pygame.key.get_pressed() 
+ 
+            if (keys[K_RIGHT]):
+                self.snake.moveRight()
+ 
+            if (keys[K_LEFT]):
+                self.snake.moveLeft()
+ 
+            if (keys[K_UP]):
+                self.snake.moveUp()
+ 
+            if (keys[K_DOWN]):
+                self.snake.moveDown()
  
             if (keys[K_ESCAPE]):
                 self._running = False
