@@ -20,6 +20,25 @@ from pygame.locals import *
 import pygame
 import time
 
+class Snake: # creating the snake (array of x by y pixels)
+    x = []
+    y = []
+    distance = 10 #How many pixels the snakes move per period (each apple will be 10x10 so I have 80x60 squares)
+    size = 1
+    display = 10
+    def __init__(self): #constructor
+        for i in range(0, self.size*self.distance):
+            self.x[i] = self.x.append(0)
+            self.y[i] = self.y.append(0)
+    
+    def draw(self, surface): #draw.rect method needs a surface that is created in the GameWindow later on.
+        pygame.draw.rect(surface, (0, 255, 0), (400, 300, 10, 10))
+        
+
+
+    #def update(self): #update method to renew position and size each period
+        #if self.
+
 class GameWindow:
 
     windowWidth = 800
@@ -29,6 +48,7 @@ class GameWindow:
         self._running = True
         self._display_surf = None
         self._image_surf = None
+        self.snake = Snake()
  
     def on_init(self):
         pygame.init()
@@ -45,8 +65,9 @@ class GameWindow:
         pass
  
     def on_render(self):
-        self._display_surf.fill((0,0,0))
-        pygame.display.flip()
+        self._display_surf.fill((0,0,0)) #Color of the board
+        self.snake.draw(self._display_surf)
+        pygame.display.flip() #update the display of the screen
  
     def on_cleanup(self):
         pygame.quit()

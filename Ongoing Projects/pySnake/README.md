@@ -24,10 +24,12 @@ Firstly, fully understand the project proposed and fix any eventual bug found, f
 
 ## Current features
 
-None
+* Create a screen
+* Create the snake (10x10 pixels and green)
+* Esc to exit
 
 ## Future features/Under development
 
-* Creating screen and esc to exit
+* Moves
 
 > v1.0.0
