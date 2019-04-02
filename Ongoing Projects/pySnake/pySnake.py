@@ -7,7 +7,7 @@ __author__ = "Guilherme Theis"
 __copyright__ = "Copyright 2019, GTheis"
 __credits__ = []
 __license__ = "MIT"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __maintainer__ = "Guilherme Theis"
 __email__ = "Guilherme Theis"
 __status__ = "Development"
@@ -69,6 +69,7 @@ class GameWindow:
 
     windowWidth = 800
     windowHeight = 600
+    difficulty = 10
  
     def __init__(self): #Constructor
         self._running = True
@@ -128,7 +129,7 @@ class GameWindow:
  
             self.on_loop()
             self.on_render()
-            time.sleep (50.0 / 1000.0);
+            pygame.time.delay(int(500/self.difficulty))
         self.on_cleanup()
 
 def main():

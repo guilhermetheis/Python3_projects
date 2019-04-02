@@ -29,9 +29,10 @@ Firstly, fully understand the project proposed and fix any eventual bug found, f
 * Esc to exit
 * Movement
 * Apple with random placement
+* Difficulty added
 
 ## Future features/Under development
 
 * Increase size
 
-> v1.0.0
+> v1.0.1
