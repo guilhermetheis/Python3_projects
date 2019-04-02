@@ -16,7 +16,7 @@ Firstly, fully understand the project proposed and fix any eventual bug found, f
 1. Create a map to understand how to create graphics using python (may be intialy on the terminal) - **Done**
 2. Create the different components of the game (snake and apple) - **Done**
 3. Allow to move the snake and eat the apple (getting bigger) **EAT Apple**
-4. Create a random/pseudo-random generator for the apple
+4. Create a random/pseudo-random generator for the apple **Done**
 5. Create score board
 6. Create a menu with multiple speeds
 7. Increase the speed each time the apple is eaten

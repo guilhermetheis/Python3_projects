@@ -29,18 +29,25 @@ green = (0, 255, 0)
 red = (255, 0, 0)
 
 class Apple:
-    def __init__(self, snakeXPos, snakeYPos):
-        try:
-            self.ypos = random.randrange(0, 590, 10)
-        except self.ypos != snakeYPos:
-            pass
-        try:
-            self.xpos = random.randrange(0, 790, 10)
-        except self.ypos != snakeXPos:
-            pass
+    def __init__(self):
+        self.appleFlag = False
+    def draw(self,surface , snakeXPos, snakeYPos):#draw.rect method needs a surface that is created in the GameWindow later on.
+        #Try...Except used to not coincide with the snake
+        if self.appleFlag == False: #if there is not an apple in the map
+
+            try:
+                self.ypos = random.randrange(0, 590, 10)
+            except self.ypos != snakeYPos:
+                pass
+            try:
+                self.xpos = random.randrange(0, 790, 10)
+            except self.xpos != snakeXPos:
+                pass
+            pygame.draw.rect(surface, red, (self.ypos, self.ypos, 10, 10))
+            self.appleFlag = True
+        else:
+            pygame.draw.rect(surface, red, (self.ypos, self.ypos, 10, 10))
         
-    def draw(self, surface): #draw.rect method needs a surface that is created in the GameWindow later on.
-        pygame.draw.rect(surface, red, (self.xpos, self.ypos, 10, 10))
 class Snake: # creating the snake (array of x by y pixels)
 
     def __init__(self): #constructor
@@ -49,7 +56,7 @@ class Snake: # creating the snake (array of x by y pixels)
         self.distance = 10 #How many pixels the snakes move per period (each apple will be 10x10 so I have 80x60 squares)
 
     def moveRight(self):
-        self.xpos = self.xpos + self.distance
+        self.xpos = self.xpos + self.distance #moving
     def moveLeft(self):
         self.xpos = self.xpos - self.distance
     def moveUp(self):
@@ -69,24 +76,23 @@ class GameWindow:
 
     windowWidth = 800
     windowHeight = 600
-    difficulty = 10
+    difficulty = 10 #this divides the render time of the game this making it faster or slower.
  
     def __init__(self): #Constructor
         self._running = True
         self._display_surf = None
         self._image_surf = None
-        self.snake = Snake()
-        self.apple = Apple(self.snake.xpos,self.snake.ypos)
+        self.snake = Snake() #Creating snake mathod
+        self.apple = Apple() #creating apple
  
     def on_init(self):
         pygame.init()
         self._display_surf = pygame.display.set_mode((self.windowWidth,self.windowHeight), pygame.HWSURFACE)
- 
         pygame.display.set_caption('pySnake '+ __version__)
         self._running = True
  
-    def on_event(self, event):
-        if event.type == QUIT:
+    def on_event(self, event): #quit
+        if event.type == quit:
             self._running = False
  
     def on_loop(self):
@@ -94,8 +100,8 @@ class GameWindow:
  
     def on_render(self):
         self._display_surf.fill((0,0,0)) #Color of the board
-        self.snake.draw(self._display_surf)
-        self.apple.draw(self._display_surf)
+        self.snake.draw(self._display_surf) #draw snake
+        self.apple.draw(self._display_surf, self.snake.xpos, self.snake.ypos) #draw apple
         pygame.display.flip() #update the display of the screen
  
     def on_cleanup(self):
@@ -129,7 +135,7 @@ class GameWindow:
  
             self.on_loop()
             self.on_render()
-            pygame.time.delay(int(500/self.difficulty))
+            pygame.time.delay(int(500/self.difficulty)) #delay to renew the render (ms)
         self.on_cleanup()
 
 def main():
