@@ -6,9 +6,9 @@ __author__ = "Guilherme Theis"
 __copyright__ = "Copyright 2019, GTheis"
 __credits__ = []
 __license__ = "MIT"
-__version__ = "0.0.1"
+__version__ = "1.0.1"
 __maintainer__ = "Guilherme Theis"
-__email__ = "Guilherme Theis"
+__email__ = "guilhermetheis15@gmail.com"
 __status__ = "Development"
 
 
@@ -17,6 +17,7 @@ __status__ = "Development"
 
 import time
 import random
+from pyfiglet import Figlet #for fancy opening
 
 class Player: #Player clas
 
@@ -45,8 +46,8 @@ class Player: #Player clas
 		print('Your player has {0}HP, it is a {1} and it is level {2}'.format(self.hitPoints, self.profession, self.level))
 
 	def attack(self): #attack move
-		a = random.randint(0,5)
-		if a == 5:
+		a = random.randint(0,4)
+		if a == 4:
 			return 'crit', a*self.level # attack = random (from 0 to 5) * player level
 		elif a == 0:
 			return 'miss', a*self.level
@@ -116,6 +117,10 @@ def main():
 	level = 1 #initial conditions player
 	hitPoints = 10
 	profession = 'archer'
+	f = Figlet(font='slant')
+	print(f.renderText('Welcome to\n simpleGame'))
+	print('Version {0}'.format(__version__))
+	print('{0}. Maintained by {1}, email: {2}'.format(__copyright__, __maintainer__, __email__))
 	while True: #first loop to verify if wants to play again
 		myArcher = Player(hitPoints, profession, level)
 		monster = Monster(myArcher.level)
