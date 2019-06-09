@@ -1,6 +1,5 @@
 # pySnake.py
 
-
 ## Description
 
 This is a simple reproduction of the [Snake with Pygame](!https://pythonspot.com/snake-with-pygame/) tutorial. Once the tutorial and thus the simplest version of the game is understand I will be adding new features
