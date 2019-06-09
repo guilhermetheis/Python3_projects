@@ -6,49 +6,68 @@ This is my python3 applications repository, each folder should contain a differe
 
 ```bash
 .
-├── figs
-│   └── programming_challenges_v4.png
-├── Ongoing Projects
-│   ├── NBAStats
-│   │   ├── NBAStats.py
-│   │   ├── README.md
-│   │   └── scrapper.py
-│   ├── pySnake
-│   │   ├── pySnake.py
-│   │   └── README.md
-│   ├── RFCalculator
-│   │   ├── README.md
-│   │   └── RFCalculator.py
-│   └── youtubeDownloadApp
-│       └── youtubeDownloadApp.py
-├── README.md
-├── utils
-│   ├── minimalTCPConnection.py
-│   ├── passwordProject.py
-│   ├── README.md
-│   └── simpleFunction.py
-└── Working Projects
-    └── eagleBOM
-        ├── figs
-        │   ├── addAtribute.png
-        │   ├── attributes.png
-        │   ├── choosingULP.png
-        │   ├── difference.png
-        │   ├── firstStep.png
-        │   ├── secondStep.png
-        │   ├── selectingModes.png
-        │   └── settingsOfComponents.png
-        ├── README.md
-        ├── samples
-        │   ├── sample1 (copy).csv
-        │   └── sample1.csv
-        └── src
-            └── eagleBOM.py
+│   README.md
+│
+├───figs
+│       programming_challenges_v4.png
+│
+├───Ongoing Projects
+│   ├───headerCreation
+│   │       hCreation.py
+│   │       README.md
+│   │
+│   ├───NBAStats
+│   │       NBAStats.py
+│   │       README.md
+│   │       scrapper.py
+│   │
+│   ├───PythonGames
+│   │   ├───pySnake
+│   │   │       pySnake.py
+│   │   │       README.md
+│   │   │
+│   │   └───simpleRPG
+│   │           README.md
+│   │           SimpleRPG.py
+│   │
+│   ├───RFCalculator
+│   │       README.md
+│   │       RFCalculator.py
+│   │
+│   └───youtubeDownloadApp
+│           youtubeDownloadApp.py
+│
+├───utils
+│       minimalTCPConnection.py
+│       passwordProject.py
+│       README.md
+│       simpleFunction.py
+│
+└───Working Projects
+    └───eagleBOM
+        │   README.md
+        │
+        ├───figs
+        │       addAtribute.png
+        │       attributes.png
+        │       choosingULP.png
+        │       difference.png
+        │       firstStep.png
+        │       secondStep.png
+        │       selectingModes.png
+        │       settingsOfComponents.png
+        │
+        ├───samples
+        │       sample1 (copy).csv
+        │       sample1.csv
+        │
+        └───src
+                eagleBOM.py
 ```
 
 ### Working Projects
 
-Those are the projects that I've already made and validated. Issues should be opened if there is some bug. 
+Those are the projects that I've already made and validated. Issues should be opened if there is some bug.
 
 * **eagleBOM**: this script allows the automatization of an eagle created BOM file.
 
